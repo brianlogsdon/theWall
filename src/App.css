@@ -1,0 +1,51 @@
+.App {
+  text-align: center;
+  background-color: #E5E4DF;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 100px;
+  padding: 20px;
+  color: white;
+}
+
+.message {
+  
+    display: flex;
+    flex-direction: column;
+    width: 566px;
+    height: 170px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    background-color: #15202a;
+    margin-left: 25rem;
+    margin-bottom: 0.1rem;
+  
+}
+.message-content{
+  margin-left: 15px;
+  margin-top: 7px;
+  width: 445px;
+  height: 88px;
+  font-family: HelveticaNeue;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  color: #ffffff;
+}
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
