@@ -1,4 +1,4 @@
-##The Wall
+# The Wall
 A simple message board built with ReactJS. A demo can be seen by clicking [here](https://brianlogsdon.github.io/theWall/). The back end repository can be seen [here](https://github.com/brianlogsdon/theWall_API).
 
 
