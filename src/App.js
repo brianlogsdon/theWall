@@ -41,7 +41,7 @@ handle_new_message = (e, data) =>{
  //called after successful new message to update the message array
  
   var update=() =>{
-   fetch('http://localhost:8000/messages/?ordering=-id')
+   fetch('hhttp://brianlogsdon2.pythonanywhere.com/messages/?ordering=-id')
    .then(response=>(response.json()))
    .then(data => { 
      this.setState({messages:data}); 
@@ -49,7 +49,7 @@ handle_new_message = (e, data) =>{
    }
  //post new message
    e.preventDefault();
-   fetch('http://localhost:8000/messages/', {
+   fetch('http://brianlogsdon2.pythonanywhere.com/messages/', {
      method: 'POST',
      headers: {"Authorization": `JWT ${localStorage.getItem('token')}`,
        'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ handle_new_message = (e, data) =>{
 
 handle_signup = (e, data) => {
   e.preventDefault();
-  fetch('http://localhost:8000/core/users/', {
+  fetch('http://brianlogsdon2.pythonanywhere.com/core/users/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -83,7 +83,7 @@ handle_signup = (e, data) => {
 
 handle_login = (e, data) => {
   e.preventDefault();
-  fetch('http://localhost:8000/token-auth/', {
+  fetch('http://brianlogsdon2.pythonanywhere.com/token-auth/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -111,7 +111,7 @@ handle_logout = () => {
 //when component mounts check if there is a stored token and fetch the messages
   async componentDidMount() {
     if (this.state.logged_in) {
-      fetch('http://localhost:8000/core/current_user/', {
+      fetch('http://brianlogsdon2.pythonanywhere.com/core/current_user/', {
         headers: {
           Authorization: `JWT ${localStorage.getItem('token')}`
         }
@@ -122,7 +122,7 @@ handle_logout = () => {
           
         });
     }
-    const url = "http://127.0.0.1:8000/messages/?ordering=-id";
+    const url = "http://brianlogsdon2.pythonanywhere.com/messages/?ordering=-id";
     const response = await fetch(url);
     const data = await response.json();
     this.setState({ messages: data, loading: false });
