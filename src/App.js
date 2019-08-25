@@ -41,7 +41,7 @@ handle_new_message = (e, data) =>{
  //called after successful new message to update the message array
  
   var update=() =>{
-   fetch('hhttp://brianlogsdon2.pythonanywhere.com/messages/?ordering=-id')
+   fetch('https://brianlogsdon2.pythonanywhere.com/messages/?ordering=-id')
    .then(response=>(response.json()))
    .then(data => { 
      this.setState({messages:data}); 
@@ -49,7 +49,7 @@ handle_new_message = (e, data) =>{
    }
  //post new message
    e.preventDefault();
-   fetch('http://brianlogsdon2.pythonanywhere.com/messages/', {
+   fetch('https://brianlogsdon2.pythonanywhere.com/messages/', {
      method: 'POST',
      headers: {"Authorization": `JWT ${localStorage.getItem('token')}`,
        'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ handle_new_message = (e, data) =>{
 
 handle_signup = (e, data) => {
   e.preventDefault();
-  fetch('http://brianlogsdon2.pythonanywhere.com/core/users/', {
+  fetch('https://brianlogsdon2.pythonanywhere.com/core/users/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -83,7 +83,7 @@ handle_signup = (e, data) => {
 
 handle_login = (e, data) => {
   e.preventDefault();
-  fetch('http://brianlogsdon2.pythonanywhere.com/token-auth/', {
+  fetch('https://brianlogsdon2.pythonanywhere.com/token-auth/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -111,7 +111,7 @@ handle_logout = () => {
 //when component mounts check if there is a stored token and fetch the messages
   async componentDidMount() {
     if (this.state.logged_in) {
-      fetch('http://brianlogsdon2.pythonanywhere.com/core/current_user/', {
+      fetch('https://brianlogsdon2.pythonanywhere.com/core/current_user/', {
         headers: {
           Authorization: `JWT ${localStorage.getItem('token')}`
         }
@@ -122,7 +122,7 @@ handle_logout = () => {
           
         });
     }
-    const url = "http://brianlogsdon2.pythonanywhere.com/messages/?ordering=-id";
+    const url = "https://brianlogsdon2.pythonanywhere.com/messages/?ordering=-id";
     const response = await fetch(url);
     const data = await response.json();
     this.setState({ messages: data, loading: false });
